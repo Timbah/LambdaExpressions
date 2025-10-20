@@ -15,9 +15,11 @@ public class Main {
         }
 
         System.out.println("_".repeat(30));
+
         list.forEach((myString) -> System.out.println(myString));
 
         System.out.println("_".repeat(30));
+
         list.forEach((var myString) -> {
             char first = myString.charAt(0);
             System.out.println(myString + " means " + first);
@@ -37,4 +39,10 @@ public class Main {
 
         return result;
     }
+
+    //THere are many built in interfaces in java.util package
+    // Four categories are Consumer(Don't return anything),
+    // Predicate(always return a boolean)
+
+
 }
