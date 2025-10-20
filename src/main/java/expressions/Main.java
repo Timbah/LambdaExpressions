@@ -23,7 +23,10 @@ public class Main {
             System.out.println(myString + " means " + first);
         });
 
-        int result = calculator((a,b)-> a+b,0,0);
+        int result = calculator((a, b) -> a + b, 0, 0);
+        var result2 = calculator((a, b) -> a / b, 10.0, 2.0);
+        var result3 = calculator(
+                (a, b) -> a.toUpperCase() + " " + b.toUpperCase(), "Ralph", "Kramden");
 
     }
 
