@@ -22,5 +22,16 @@ public class Main {
             char first = myString.charAt(0);
             System.out.println(myString + " means " + first);
         });
+
+        int result = calculator((a,b)-> a+b,0,0);
+
+    }
+
+    public static <T> T calculator(Operation<T> function, T value1, T value2) {
+
+        T result = function.operate(value1, value2);
+        System.out.println("Result of operation: " + result);
+
+        return result;
     }
 }
