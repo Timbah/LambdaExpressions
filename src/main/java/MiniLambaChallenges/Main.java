@@ -36,5 +36,10 @@ public class Main {
         };
 
         printWordsForEach.accept("Let's split this up into an array");
+
+        Consumer<String> printWordsConsice = (sentence) -> {
+            Arrays.asList(sentence.split(" ")).forEach(s -> System.out.println(s));
+        };
+        printWordsConsice.accept("Let's split this up into an array");
     }
 }
