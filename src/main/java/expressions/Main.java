@@ -1,6 +1,7 @@
 package expressions;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -29,6 +30,29 @@ public class Main {
         var result2 = calculator((a, b) -> a / b, 10.0, 2.0);
         var result3 = calculator(
                 (a, b) -> a.toUpperCase() + " " + b.toUpperCase(), "Ralph", "Kramden");
+
+        list.replaceAll(s -> s.charAt(0) + " - " + s.toUpperCase());
+        System.out.println("-".repeat(30));
+        list.forEach(s -> System.out.println(s));
+
+        String[] emptyStrings = new String[10];
+        System.out.println(Arrays.toString(emptyStrings));
+
+        Arrays.fill(emptyStrings, "");
+        System.out.println(Arrays.toString(emptyStrings));
+
+        Arrays.setAll(emptyStrings, (i) -> "" + (i + 1) + ".");
+        System.out.println(Arrays.toString(emptyStrings));
+
+        Arrays.setAll(emptyStrings, (i) -> "" + (i + 1) + "."
+                + switch (i) {
+            case 0 -> "One";
+            case 1 -> "Two";
+            case 2 -> "Three";
+            default -> "";
+        });
+
+        System.out.println(Arrays.toString(emptyStrings));
 
     }
 
