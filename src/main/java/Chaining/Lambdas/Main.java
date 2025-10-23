@@ -1,7 +1,9 @@
 package Chaining.Lambdas;
 
 import java.util.Arrays;
+import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class Main {
 
@@ -38,5 +40,22 @@ public class Main {
                 .andThen(String::length);
 
         System.out.println(f2.apply(name));
+
+        String[] names = {"Ann", "Bob", "Carol"};
+        Consumer<String> s0 = s -> System.out.print(s.charAt(0));
+        Consumer<String> s1 = System.out::println;
+        Arrays.asList(names).forEach(s0
+                .andThen(s -> System.out.print(" - "))
+                .andThen(s1)
+        );
+
+        Predicate<String> p1 = s -> s.equals("THEMBELANI");
+        Predicate<String> p2 = s -> s.equalsIgnoreCase("Thembelani");
+        Predicate<String> p3 = s -> s.startsWith("T");
+        Predicate<String> p4 = s -> s.endsWith("i");
+
+        Predicate<String> combined1 = p1.or(p2);
+        System.out.println("Combined1 = " + combined1.test(name));
+
     }
 }
