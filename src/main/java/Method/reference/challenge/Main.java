@@ -18,7 +18,9 @@ public class Main {
                 String::toUpperCase,
                 s -> s += " " + getRandomChar('D', 'M') + ".",
                 s -> s += " " + reverse(s, 0, s.indexOf(" ")),
-                Main::reverse));
+                Main::reverse,
+                String::new,
+                s -> new String(s)));
 
         applyChanges(names, list);
     }
