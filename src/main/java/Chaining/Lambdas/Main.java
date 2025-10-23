@@ -34,7 +34,7 @@ public class Main {
         Function<String, Integer> f2 = uCase
                 .andThen(s -> s.concat(" Ngema"))
                 .andThen(s -> s.split(" "))
-                .andThen(s-> String.join(", ",s))
+                .andThen(s -> String.join(", ", s))
                 .andThen(String::length);
 
         System.out.println(f2.apply(name));
